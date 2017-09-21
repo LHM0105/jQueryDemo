@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				width:600px;
+				overflow: hidden;
+				background: lightgrey;
+			}
+			ul li{
+				list-style:none;
+				background: pink;
+			}
+			.collapse{
+				list-style:url(img/collapse.gif);
+			}
+			.expand{
+				list-style: url(img/expand.gif);
+			}
+		</style>
+		<script src="jquery1.8.3.js"></script>
+		<script>
+			$(function(){
+				//设置刚打开页面时所有选项闭合，小图标显示为+
+				$('li:has(ul)').addClass('collapse');
+				$('li ul').hide();
+				//给li添加点击事件
+				$('li').click(function(ev){
+					
+					//判断被点击的li是不是有ul子元素
+					if($(this).has('ul').length > 0){
+						//给li添加/删除class，并且设置ul显示/隐藏
+						$(this).toggleClass('expand').children('ul').toggle(500);
+					}
+					
+					//阻止冒泡事件
+					var e = ev || window.event;
+					if(e.stopPropagation){
+						e.stopPropagation();//propagation传播
+					}else{
+						e.cancelBubble=true;
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>主题市场
+				<ul>
+					<li>运动
+						<ul>
+							<li>三级菜单11
+								<ul>
+									<li>四级菜单1</li>
+									<li>四级菜单2</li>
+									<li>四级菜单3</li>
+								</ul>
+							</li>
+							<li>三级菜单12</li>
+							<li>三级菜单13</li>
+						</ul>
+					</li>
+					<li>有车</li>
+					<li>生活家</li>
+				</ul>
+			</li>
+			<li>特色购物
+				<ul>
+					<li>运动
+						<ul>
+							<li>三级菜单11
+							</li>
+							<li>三级菜单12</li>
+							<li>三级菜单13</li>
+						</ul>
+					</li>
+					<li>21</li>
+					<li>22</li>
+				</ul>
+			</li>
+			<li>优惠促销
+				<ul>
+					<li>11</li>
+					<li>运动33
+						<ul>
+							<li>三级菜单11
+							</li>
+							<li>三级菜单12</li>
+							<li>三级菜单13</li>
+						</ul>
+					</li>
+					
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>
