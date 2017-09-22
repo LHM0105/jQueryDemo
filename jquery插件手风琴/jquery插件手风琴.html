@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jquery插件实现手风琴</title>
+		<!--本页面样式-->
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<!--手风琴样式-->
+		<link rel="stylesheet" type="text/css" href="accordion.css"/>
+		<!--jquery-->
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.10.0/jquery.js"></script>
+		<!--手风琴插件的js文件-->
+		<script src="accordion.js"></script>
+		
+		<!--本页面js文件-->
+		<script>
+			$(function(){
+				//调用插件方法
+				$('.accordion').accordion();
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div class="box">
+			<h2>第一个手风琴</h2>
+			<ul class="accordion">
+				<li style="background: url(img/1.jpg) no-repeat center;">
+					<div><span>园林酒店</span></div>
+				</li>
+				<li style="background: url(img/2.jpg) no-repeat center;">
+					<div><span>青年公寓</span></div>
+				</li>
+				<li style="background: url(img/3.jpg) no-repeat center;">
+					<div><span>设计师酒店</span></div>
+				</li>
+				<li style="background: url(img/4.jpg) no-repeat center;">
+					<div><span>特色客栈</span></div>
+				</li>
+				<li style="background: url(img/5.jpg) no-repeat center;">
+					<div><span>海岛酒店</span></div>
+				</li>
+				<li style="background: url(img/6.jpg) no-repeat center;">
+					<div><span>海外温泉</span></div>
+				</li>
+			</ul>
+		</div>
+		<div class="box">
+			<h2>第二个手风琴</h2>
+			<ul class="accordion">
+				<li style="background: url(img/1.jpg) no-repeat center;">
+					<div><span>园林酒店</span></div>
+				</li>
+				<li style="background: url(img/2.jpg) no-repeat center;">
+					<div><span>青年公寓</span></div>
+				</li>
+				<li style="background: url(img/3.jpg) no-repeat center;">
+					<div><span>设计师酒店</span></div>
+				</li>
+				<li style="background: url(img/4.jpg) no-repeat center;">
+					<div><span>特色客栈</span></div>
+				</li>
+				<li style="background: url(img/5.jpg) no-repeat center;">
+					<div><span>海岛酒店</span></div>
+				</li>
+				<li style="background: url(img/6.jpg) no-repeat center;">
+					<div><span>海外温泉</span></div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

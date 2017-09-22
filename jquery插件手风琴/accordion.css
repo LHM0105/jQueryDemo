@@ -1,0 +1,26 @@
+.accordion{
+	overflow:hidden;
+	float: left;
+}
+.accordion li{
+	width:200px;
+	height:260px;
+	float:left;
+	position: relative;
+}
+.accordion li div{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	
+	background:rgba(0,0,0,0.3);
+}
+.accordion li div span{
+	display: block;
+	color: #fff;
+	font-size:26px;
+	width: 30px;
+	margin: 30px auto;
+}
