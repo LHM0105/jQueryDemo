@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>方向检测版鼠标放上突出显示</title>
+		<link rel="stylesheet" type="text/css" href="fxjc.css"/>
+		<!--引入jquery文件-->
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.10.0/jquery.js"></script>
+		
+		<script>
+			$(function(){
+				$('.box .inner-box').bind('mouseenter mouseleave',function(e){
+					//检测方向
+					var w = $(this).width();
+					var h = $(this).height();
+					var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+					var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+					var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+					
+					if(e.type === 'mouseenter'){
+						//设置mask遮罩的出现起始位置
+						var oStart = null;
+						switch(direction){
+							case 0:
+								oStart = {
+									left:0,
+									top:-h
+								};
+								break;
+							case 1:
+								oStart = {
+									left:w,
+									top:0
+								};
+								break;
+							case 2:
+								oStart = {
+									left:0,
+									top:h
+								};
+								break;
+							case 3:
+								oStart = {
+									left:-w,
+									top:0
+								}
+								break;
+						}
+						console.log(oStart);
+						$(this).children('.mask').css(oStart).stop(true).animate({
+							top:0,
+							left:0
+						});
+					}else{
+						//设置mask的消失终点位置
+						var oEnd = null;
+						switch(direction){
+							case 0:
+								oEnd = {
+									left:0,
+									top:-h
+								};
+								break;
+							case 1:
+								oEnd = {
+									left:w,
+									top:0
+								};
+								break;
+							case 2:
+								oEnd = {
+									left:0,
+									top:h
+								};
+								break;
+							case 3:
+								oEnd = {
+									left:-w,
+									top:0
+								}
+								break;
+						}
+						console.log(oStart);
+						$(this).children('.mask').stop(true).animate(oEnd);
+					}
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="inner-box">
+				<img src="img/images/1.png" />
+				<div class="mask">站酷网 | 中国最具人气的设计师互动平台<br>国内最活跃的原创设计交流平台</div>
+			</div>
+			<div class="inner-box">
+				<img src="img/images/2.png" />
+				<div class="mask">植美村 | 中国最受消费者欢迎的二十大品牌<br>中国著名品牌之一</div>
+			</div>
+			<div class="inner-box">
+				<img src="img/images/3.png" />
+				<div class="mask">上海添香 | 拥有国内顶尖整合营销团队<br>防辐射服装行业的第一品牌</div>
+			</div>
+			<div class="inner-box">
+				<img src="img/images/4.png" />
+				<div class="mask">零食够 | 各类进口食品、健康零食<br>全球采购，吃出健康国际范</div>
+			</div>
+			<div class="inner-box">
+				<img src="img/images/5.png" />
+				<div class="mask">澳优乳业 | 中国高端奶粉市场五强中唯一的奶源<br>来自澳洲的中国品牌</div>
+			</div>
+		</div>
+	</body>
+</html>
