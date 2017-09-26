@@ -1,0 +1,58 @@
+.slider{
+	position: relative;
+	overflow: hidden;
+}
+.slider .img-list{
+	/*宽度由图片总数决定，在js中设置*/
+	/*width:100%;*/
+	height:100%;
+	position:absolute;
+}
+
+.slider .img-list li{
+	height: 100%;
+	float: left;
+}
+/*左右切换按钮*/
+.slider>a{
+	display:none;
+	width: 30px;
+	height: 50px;
+	background: rgba(0,0,0,0.2);
+	font-size: 26px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top:50%;
+	margin-top: -25px;
+	
+}
+.slider .slider-l{
+	left: 0;
+}
+.slider .slider-r{
+	right: 0;
+}
+.slider .btn-list{
+	overflow: hidden;
+	position: absolute;
+	left:50%;
+	bottom:10px;
+}
+.slider .btn-list li{
+	width:10px;
+	height:10px;
+	border:2px solid dimgrey;
+	float: left;
+	margin:3px;
+	border-radius:50%;
+}
+
+.slider .btn-list .active{
+	background:orange;
+	border: 2px solid orange;
+}
+/*.slider .img-list .active{
+	
+}*/

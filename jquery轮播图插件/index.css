@@ -1,0 +1,22 @@
+html,body,ul,li{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+.slider{
+	width:790px;
+	height:340px;
+	margin: 30px auto;
+}
+/*第二个轮播图*/
+.slider2{
+	width:700px;
+	height:300px;;
+	margin:0;
+}
